@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>TITLE</title>
+    <meta name="description" content="PRESENTATION DESCRIPTION">
+    <meta name="author" content="AUTHOR NAME">
+
+    <link rel="icon" type="image/x-icon" href="./files/favicon-32x32.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+
+    <!-- theme -->
+    <link rel="stylesheet" href="dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="dist/theme/escience_4.3.1.css" id="theme">
+
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+    <!-- Load jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section
+          data-state="blue_overlay yellow_flag yellow_strip purple_half_circle_bottom purple_blob right_e_top"
+          data-background-video="./files/Mood video Homepage 2.mp4"
+          data-background-video-loop
+          data-background-video-muted="true"
+          data-markdown>
+              # My Title
+              ## Subtitle
+
+              [Author Name](mailto:a.name@esciencecenter.nl)
+          </section>
+
+          <section> <!-- start of nested slides/column -->
+            <section data-state="standard">
+              <h2>html slides</h2>
+              <p>content</p>
+              <p>with html</p>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              # dtrn
+
+              - list item
+              - another one
+            </section>
+          </section> <!-- end of nested slides/column -->
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/search/search.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <!--
+    <script src="reveal.js/4.3.1/reveal.js-plugins/menu/menu.js"></script>
+    -->
+
+    <script src="dist/escience.js"></script>
+
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Automatically activate the scroll view when we the viewport falls
+        // below the given width.
+        scrollActivationWidth: 0,  // disabled
+
+        // Force the scrollbar to remain visible
+        scrollProgress: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
