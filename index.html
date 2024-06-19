@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>TITLE</title>
-    <meta name="description" content="PRESENTATION DESCRIPTION">
-    <meta name="author" content="AUTHOR NAME">
+    <title>Slide Manual</title>
+    <meta name="description" content="How to use this presentation framework">
+    <meta name="author" content="Ole Mussmann">
 
     <link rel="icon" type="image/x-icon" href="./files/favicon-32x32.png">
 
@@ -20,11 +20,10 @@
 
     <!-- theme -->
     <link rel="stylesheet" href="dist/theme/black.css" id="theme">
-    <link rel="stylesheet" href="dist/theme/escience_4.3.1.css" id="theme">
+    <link rel="stylesheet" href="dist/theme/escience_5.1.0.css" id="theme">
 
     <!-- fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Fira+Code:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!-- Theme used for syntax highlighted code -->
@@ -48,25 +47,423 @@
           data-background-video-loop
           data-background-video-muted="true"
           data-markdown>
-              # My Title
-              ## Subtitle
+            <textarea data-template>
+              # Slide Manual
+              ## Demo & All Theme Options
 
-              [Author Name](mailto:a.name@esciencecenter.nl)
+              [Ole Mussmann](mailto:o.mussmann@esciencecenter.nl)
+            </textarea>
           </section>
 
-          <section> <!-- start of nested slides/column -->
-            <section data-state="standard">
-              <h2>html slides</h2>
-              <p>content</p>
-              <p>with html</p>
+
+          <section data-state="standard" id="toc" data-background-image="./files/checklist-2589418_1280.jpg" data-markdown> <!-- start of a single slide -->
+            <!-- https://pixabay.com/photos/checklist-goals-box-notebook-pen-2589418/ -->
+            <textarea data-template>
+
+            ## Table of Contents
+
+            - [First Steps](#/first-steps)
+            - [Theme Presets](#/presets)
+            - [Overlays](#/overlays)
+            - [Decorations](#/decorations)
+
+            </textarea>
+          </section>
+
+          <section data-background-image="./files/cat-727266_1280.jpg"> <!-- start of nested slides/column -->
+            <!-- https://pixabay.com/photos/cat-family-pet-love-happy-animal-727266/ -->
+            <section data-state="standard" id="first-steps" data-markdown>
+              <textarea data-template>
+                # First Steps
+
+                From zero to presentation
+              </textarea>
             </section>
 
             <section data-state="standard" data-markdown>
-              # dtrn
-
-              - list item
-              - another one
+              <textarea data-template>
+                ## Get Template
+                - Go to https://github.com/OleMussmann/reveal_template
+                - Click on "Use this template" → "Create a new repository" ![Click on "Use this template"](./files/template.png "Use this template")
+              </textarea>
             </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Use Template
+                - The owner should be **NLeSC-slides**
+                - The repo name should follow the convention<br>`YYYY-MM-DD_name`, e.g.<br>`2029-12-24_my_great_presentation`
+                - Give a short **Description** of the presentation/lesson content
+                - Make it **Public**
+                - Click on **Create repository**
+              </textarea>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Edit Presentation
+                - Clone your new repo and `cd` into the new folder
+                - Edit the `index.html`
+                  - Edit the **TITLE**, **DESCRIPTION** and **AUTHOR** in the header
+                  - Add your slide content in the `<div class="slides">` element
+                - Open the `index.html` file in the browser, for example: `firefox index.html`
+                - If you use fancy web-based visualizations, you might need to serve your presentation with a real webserver instead. Python has one built-in, use for example:<br>`python -m http.server`
+              </textarea>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Live Reload
+                Optionally, the presentation can be refreshed<br>whenever you make changes.
+                - Install the Python `livereload` package:<br>`pip install --user livereload`
+                  - Depending on your workflow, you could also install it in a virtual environment
+                - Serve your presentation with `python serve.py`, it will serve the presentation on default port `8000`
+                  - Tip: If needed, specify a different port as a command line argument, like `python serve.py 12345`
+              </textarea>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Create content
+
+                - Reveal.js has an excellent documentation, at [revealjs.com](https://revealjs.com/)
+              </textarea>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Publish
+                - Activate **GitHub Actions** via **Settings** →  **Pages**
+                  <img src="./files/pages.png">
+                - After any push or pull request to `main`, check:<br>https://nlesc-slides.github.io/YOUR_REPO_NAME
+
+              </textarea>
+            </section>
+          </section> <!-- end of nested slides/column -->
+
+          <section data-background-image="./files/carpenter-4070631_1280.jpg"> <!-- start of nested slides/column -->
+            <!-- https://pixabay.com/photos/carpenter-wood-standard-repair-4070631/ -->
+            <section data-state="standard" id="presets" data-markdown>
+              <textarea data-template>
+                # Presets
+
+                For your convenience
+              </textarea>
+            </section>
+
+            <section data-state="standard" data-markdown>
+              <textarea data-template>
+                ## Usage
+
+                Mention presets in the <code>data-state</code> of your slides.<br>Applying the <code>standard</code> preset:
+                <pre><code data-line-numbers="1" data-trim><script type="text/template">
+                  &lt;section data-state="standard"&gt;
+                    ...
+                  &lt;/section&gt;
+                </script></code></pre>
+
+                N.B.: Some presets need HTML slide content
+              </textarea>
+            </section>
+
+            <section data-state="standard">
+              <h2><code>standard</code></h2>
+              <ul>
+                <li>White, transparent background</li>
+                <li>Logo in the top-left corner</li>
+                <li>Yellow flag with the "cut e" in the bottom left corner</li>
+              </ul>
+            </section>
+
+            <section data-state="two_pane">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0vw;">
+                <div style="margin: auto; transform: translateX(-3vw) translateX(3%); padding: 0; margin: auto;">
+                  <h2><code>two_pane</code></h2>
+                  <p>slide content</p>
+                </div>
+                <div style="background: white; border-radius: 20px; padding: 1vh 1vw; margin: auto; transform: translateX(2.5vw) translateY(-3%);">
+                  <!--div style="background: white; border-radius: 20px; padding: 1vh 1vw; margin: auto;"-->
+                  <ul>
+                    <li>side section</li>
+                    <li>box scales with  height</li>
+                    <li>content</li>
+                    <li>content content content content content content</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+            <section data-state="two_pane">
+              <h2><code>two_pane</code> HTML Code</h2>
+              <pre style="font-size: large; width: max-content;"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+              <div style="display: grid;
+                          grid-template-columns: 1fr 1fr;
+                          grid-gap: 0vw;">
+                <div style="margin: auto;
+                            padding: 0;
+                            transform: translateX(-3vw)
+                                       translateX(3%);">
+                  <h2>Header</h2>
+                  <p>slide content</p>
+                </div>
+                <div style="background: white;
+                            border-radius: 20px;
+                            padding: 1vh 1vw;
+                            margin: auto;
+                            transform: translateX(2.5vw)
+                                       translateY(-3%);">
+                  <ul>
+                    <li>side section</li>
+                    <li>box scales with  height</li>
+                    <li>content</li>
+                    <li>content content content</li>
+                  </ul>
+                </div>
+              </div>
+              </script></code></pre>
+            </section>
+
+            <section data-state="about">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 0;">
+                <div style="margin: auto; transform: translateX(-3vw) translateX(3%); padding: 0; margin: auto; text-align: left;">
+                  <h3 style="color: white;">“Empowering researchers across all disciplines through innovative research software”</h3>
+                </div>
+                <div style="margin: auto; transform: translate(3vw) translate(-3%); text-align: left;">
+                  <h2><code>about</code></h2>
+                  <b>Contact Person</b><br>
+                  <div style="display: grid; grid-template-columns: 1fr 4fr;">
+                    <img style="width: 5vw; border-radius: 100%; float: left;" src="./files/cat.jpg">
+                    <div style="margin: auto auto auto 1ex;">
+                      Kit McKitterson<br>
+                      <a href="mailto:kit@esciencecenter.nl">kit@esciencecenter.nl</a>
+                    </div>
+                  </div>
+                  <div style="display: grid; grid-template-columns: 1fr 4fr;">
+                    <img style="width: 5vw; border-radius: 100%; float: left;" src="./files/cat2.jpg">
+                    <div style="margin: auto auto auto 1ex;">
+                      Kat McKatterson<br>
+                      <a href="mailto:kat@esciencecenter.nl">kat@esciencecenter.nl</a>
+                    </div>
+                  </div>
+                  (supply square image, get rounded profile image)
+                </div>
+              </div>
+            </section>
+
+            <section data-state="about">
+              <h2><code>about</code> HTML Code</h2>
+              <pre style="font-size: large; width: max-content;"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <div style="display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            grid-gap: 0;">
+                  <div style="margin: auto;
+                              transform: translateX(-3vw) translateX(3%);
+                              padding: 0;
+                              margin: auto;
+                              text-align: left;">
+                    <h3 style="color: white;">“Empowering researchers [...]”</h3>
+                  </div>
+                  <div style="margin: auto; text-align: left;
+                              transform: translate(3vw) translate(-3%);">
+                    <h2>About</h2>
+                    <b>Contact Person</b><br>
+                    <div style="display: grid; grid-template-columns: 1fr 4fr;">
+                      <img style="width: 5vw; border-radius: 100%; float: left;" src="./files/cat.jpg">
+                      <div style="margin: auto auto auto 1ex;">
+                        Kit McKitterson<br>
+                        <a href="mailto:kit@esciencecenter.nl">kit@esciencecenter.nl</a>
+                      </div>
+                    </div>
+                    [...]
+                  </div>
+                </div>
+              </script></code></pre>
+            </section>
+
+            <section data-state="touch">
+              <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+              <div style="text-align: left; margin-left: 40%;">
+                <h2><code>touch</code></h2>
+                <table>
+                  <tr>
+                    <td style="border: none;"><span class="material-icons" style="font-size: 36px; transform: translateY(.4ex);">language</span></td>
+                    <td style="border: none;"><a href="https://www.esciencecenter.nl/">esciencecenter.nl</a></td>
+                  </tr>
+                  <tr>
+                    <td style="border: none;"><span class="material-icons" style="font-size: 36px; transform: translateY(.4ex);">mail_outline</span></td>
+                    <td style="border: none;"><a href="mailto:info@esciencecenter.nl">info@esciencecenter.nl</a></td>
+                  </tr>
+                  <tr>
+                    <td style="border: none;"><span class="material-icons" style="font-size: 36px; transform: translateY(.4ex);">phone</span></td>
+                    <td style="border: none;"><a href="tel:+31204604770">+31 (0)20 460 4770</a></td>
+                  </tr>
+                </table>
+              </div>
+            </section>
+
+            <section data-state="touch">
+              <h2><code>touch</code> HTML Code</h2>
+              <pre style="font-size: small; width: max-content;"><code class="language-html" data-line-numbers data-trim><script type="text/template">
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <div style="text-align: left; margin-left: 40%;">
+                  <table>
+                    <tr>
+                      <td style="border: none;"><span class="material-icons"
+                                                      style="font-size: 36px;
+                                                             transform: translateY(.4ex);">language</span></td>
+                      <td style="border: none;"><a href="https://www.esciencecenter.nl/">esciencecenter.nl</a></td>
+                    </tr>
+                    <tr>
+                      <td style="border: none;"><span class="material-icons"
+                                                      style="font-size: 36px;
+                                                             transform: translateY(.4ex);">mail_outline</span></td>
+                      <td style="border: none;"><a href="mailto:info@esciencecenter.nl">info@esciencecenter.nl</a></td>
+                    </tr>
+                    <tr>
+                      <td style="border: none;"><span class="material-icons"
+                                                      style="font-size: 36px;
+                                                             transform: translateY(.4ex);">phone</span></td>
+                      <td style="border: none;"><a href="tel:+31204604770">+31 (0)20 460 4770</a></td>
+                    </tr>
+                  </table>
+                </div>
+              </script></code></pre>
+            </section>
+          </section> <!-- end of nested slides/column -->
+
+          <section> <!-- start of nested slides/column -->
+            <section data-state="standard" id="overlays" data-background="./files/dna-3539309_1920.jpg">
+              <!-- Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3539309">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3539309">Pixabay</a> -->
+              <h1>Overlays</h1>
+
+              Prettify your slides with background images, without distracting from your content
+            </section>
+
+            <section data-state="white_overlay" data-background="./files/dna-3539309_1920.jpg">
+              <h2>Usage</h2>
+              Mention colored overlays in the <code>data-state</code> of your slides.<br>Applying the <code>white_overlay</code>:
+              <pre><code class="language-html" data-line-numbers="1" data-trim><script type="text/template">
+                <section data-state="white_overlay">
+                  ...
+                </section>
+              </script></code></pre>
+            </section>
+
+            <section data-state="white_overlay 4" data-background="./files/dna-3539309_1920.jpg">
+              <h2>Opacity</h2>
+              An integer <code>0-10</code> in the data-state string sets the overlay opacity between 0 and 100%. The default is <code>8</code> or 80%.
+                <pre><code class="language-html" data-line-numbers="1" data-trim><script type="text/template">
+                  <section data-state="white_overlay 4">
+                    ...
+                  </section>
+                </script></code></pre>
+                Did you see the background change?
+            </section>
+
+            <section data-state="blue_overlay" data-background="./files/dna-3539309_1920.jpg">
+              <h2><code>blue_overlay</code></h2>
+            </section>
+
+            <section data-state="purple_overlay" data-background="./files/dna-3539309_1920.jpg">
+              <h2><code>purple_overlay</code></h2>
+            </section>
+
+            <section data-state="white_overlay" data-background="./files/dna-3539309_1920.jpg">
+              <h2><code>white_overlay</code></h2>
+            </section>
+
+            <section data-state="black_overlay" data-background="./files/dna-3539309_1920.jpg">
+              <h2><code>black_overlay</code></h2>
+            </section>
+
+            <section data-state="clear_background">
+              <h2><code>clear_background</code></h2>
+              A <code>clear_background</code> is necessary if the background is an <code>&lt;iframe&gt;</code> that you want to interact with. Otherwise the overlays cover the background, even though they are invisible (opacity 0).
+            </section>
+          </section> <!-- end of nested slides/column -->
+
+          <section> <!-- start of nested slides/column -->
+            <section data-state="black_overlay logo yellow_flag" id="decorations" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <!-- Image by <a href="https://pixabay.com/users/wikiimages-1897/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=74034">WikiImages</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=74034">Pixabay</a> -->
+              <h1>Decorations</h1>
+            </section>
+
+            <section data-state="black_overlay logo yellow_flag" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2>Usage</h2>
+              Mention decorations in the <code>data-state</code> of your slides.<br>Applying the <code>logo</code> and <code>yellow_flag</code> decorations:
+              <pre><code class="language-html" data-line-numbers="1" data-trim><script type="text/template">
+                <section data-state="logo yellow_flag">
+                  ...
+                </section>
+              </script></code></pre>
+              You can combine these with the colored overlays, of course.
+            </section>
+
+            <section data-state="white_overlay logo" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>logo</code></h2>
+              The logo color changes according to overlay color
+            </section>
+
+            <section data-state="white_overlay logo purple_half_circle_top" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>purple_half_circle_top</code></h2>
+              The logo color changes according to decorations
+              <br>
+              <br>
+              <br>
+              (You probably did not even notice it!)
+            </section>
+
+            <section data-state="white_overlay purple_half_circle_bottom" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>purple_half_circle_bottom</code></h2>
+              with logo
+            </section>
+
+            <section data-state="white_overlay purple_strip_bottom" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>purple_strip_bottom</code></h2>
+            </section>
+
+            <section data-state="white_overlay yellow_half_strip" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>yellow_half_strip</code></h2>
+            </section>
+
+            <section data-state="white_overlay purple_blob right_e_top" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>purple_blob</code></h2>
+              <h4>Guest appearance: <code>right_e_top</code></h4>
+            </section>
+
+            <section data-state="blue_overlay right_e_top" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>right_e_top</code></h2>
+            </section>
+
+            <section data-state="blue_overlay right_e_bottom" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>right_e_bottom</code></h2>
+            </section>
+
+            <section data-state="white_overlay yellow_strip" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>yellow_strip</code></h2>
+            </section>
+
+            <section data-state="white_overlay yellow_flag" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>yellow_flag</code></h2>
+            </section>
+
+            <section data-state="white_overlay" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2><code>footer</code></h2>
+              The footer is not used in the <code>data-state</code>, but as an element in your slide content.
+              <pre><code class="language-html" data-line-numbers="4" data-trim><script type="text/template">
+              <section>
+                Cool paper<sup>1</sup>
+
+                <footer>[1] Paper source</footer>
+              </section>
+              </script></code></pre>
+                <p>Cool paper <sup>1</sup></p>
+                <footer>[1] Paper source</footer>
+            </section>
+
+            <section data-state="logo blue_overlay yellow_flag purple_half_circle_bottom purple_blob" data-background="./files/telescopic-mirror-74034_1920.jpg">
+              <h2>or any combination of these</h2>
+            </section>
+
           </section> <!-- end of nested slides/column -->
 
       </div>
@@ -84,7 +481,7 @@
     <script src="reveal.js/4.3.1/reveal.js-plugins/menu/menu.js"></script>
     -->
 
-    <script src="dist/escience.js"></script>
+    <script src="dist/theme/escience_5.1.0.js"></script>
 
     <script>
       // More info about initialization & config:

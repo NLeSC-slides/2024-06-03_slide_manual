@@ -1,48 +1,45 @@
-/*
-for copy & pasting:
-	primary color:   "#009DDD"
-	secondary color: "#380339"
-	tertiary color:  "#FFB213"
- */
+/*********************************************
+ * COLORS
+ *********************************************/
+
+:root {
+  --nlesc-blue: #009DDD;
+  --nlesc-purple: #380339;
+  --gray-transparent: rgba(128, 128, 128, .5);
+  --nlesc-yellow: #FFB213;
+  --light-gray: #D8D8D8;
+  --dark-gray: #2b2b2b;
+}
 
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 
-@import url('https://fonts.googleapis.com/css?family=Nunito:700|Assistant&display=swap');
-
-/* latin */
-@font-face {
-  font-family: 'Nunito';
-  /*font-style: bold;*/
-  font-weight: 700;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Assistant';
-  font-style: normal;
-  font-weight: 400;
-}
-
-/* latin */
-@font-face {
-  font-family: 'Assistant';
-  font-style: normal;
-  font-weight: 700;
-}
-
 p, div, ul {
-  font-family: Assistant !important;
+  font-family: "Assistant", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 400 !important;
+  font-style: normal;
 }
 
 h1, h2, h3 {
-  font-family: Nunito !important;
+  font-family: 'Nunito' !important;
+  font-weight: 700 !important;
 }
 
 h4, h5 {
-  font-family: Assistant !important;
-  font-weight: bold;
+  font-family: "Assistant", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+
+code {
+  font-family: 'Fira Code', monospace !important;
+  font-optical-sizing: auto !important;
+  font-weight: 500;
+  font-style: normal;
+  background-color: var(--gray-transparent);
 }
 
 .reveal h1,
@@ -58,35 +55,35 @@ h4, h5 {
   font-size: 36px; }  /* make stuff smaller */
 
 ::selection {
-  color: #fff;
-  background: #380339;
+  color: #0f0;
+  background: var(--nlesc-purple);
   text-shadow: none; }
 
 ::-moz-selection {
   color: #fff;
-  background: #380339;
+  background: var(--nlesc-purple);
   text-shadow: none; }
 
 
 /*********************************************
  * CUSTOM COLORS
  *********************************************/
-.primary { color: #009DDD !important; }
-.secondary { color: #380339 !important; }
-.tertiary { color: #D8D8D8 !important; }
+.primary { color: var(--nlesc-blue) !important; }
+.secondary { color: var(--nlesc-purple) !important; }
+.tertiary { color: var(--light-gray) !important; }
 
 /*********************************************
  * LINKS
  *********************************************/
 .reveal a {
-  color: #FFB213; }
+  color: var(--nlesc-purple); }
 
 .reveal a:hover {
-  color: #380339; }
+  color: var(--nlesc-yellow); }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #009DDD; }
+  background: var(--nlesc-blue); }
 
 /*********************************************
  * IMAGES
@@ -98,30 +95,30 @@ h4, h5 {
 }
 
 .reveal a:hover img {
-  border-color: #009DDD; }
+  border-color: var(--nlesc-blue); }
 
 /*********************************************
  * HIGHLIGHT COLORS
  *********************************************/
 
 .reveal .slides section .fragment.highlight-blue.visible {
-  color: #009DDD; }
+  color: var(--nlesc-blue); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #FFB213; }
+  color: var(--nlesc-yellow); }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #FFB213; }
+  color: var(--nlesc-yellow); }
 
 .reveal .progress span {
-  background: #FFB213;
+  background: var(--nlesc-yellow);
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
   transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
@@ -142,7 +139,7 @@ h4, h5 {
  *********************************************/
 @media print {
   .backgrounds {
-    background-color: #2b2b2b; } }
+    background-color: var(--dark-gray); } }
 
 /*********************************************
  * DIM BACKGROUND PICTURES
