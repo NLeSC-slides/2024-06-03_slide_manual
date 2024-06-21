@@ -359,25 +359,45 @@
                 Did you see the background change?
             </section>
 
-            <section data-state="blue_overlay" data-background="./files/dna-3539309_1920.jpg">
-              <h2><code>blue_overlay</code></h2>
+            <section data-state="blue_overlay" data-background="./files/dna-3539309_1920.jpg" data-markdown>
+              <textarea data-template>
+              ## `blue_overlay`
+              - white text
+              - [yellow links, purple hover](#)
+              </textarea>
             </section>
 
-            <section data-state="purple_overlay" data-background="./files/dna-3539309_1920.jpg">
-              <h2><code>purple_overlay</code></h2>
+            <section data-state="purple_overlay" data-background="./files/dna-3539309_1920.jpg" data-markdown>
+              <textarea data-template>
+              ## `purple_overlay`
+              - white text
+              - [yellow links, blue hover](#)
+              </textarea>
             </section>
 
-            <section data-state="white_overlay" data-background="./files/dna-3539309_1920.jpg">
-              <h2><code>white_overlay</code></h2>
+            <section data-state="white_overlay" data-background="./files/dna-3539309_1920.jpg" data-markdown>
+              <textarea data-template>
+              ## `white_overlay`
+              - black text
+              - [blue links, yellow hover](#)
+              </textarea>
             </section>
 
-            <section data-state="black_overlay" data-background="./files/dna-3539309_1920.jpg">
-              <h2><code>black_overlay</code></h2>
+            <section data-state="black_overlay" data-background="./files/dna-3539309_1920.jpg" data-markdown>
+              <textarea data-template>
+              ## `black_overlay`
+              - white text
+              - [yellow links, blue hover](#)
+              </textarea>
             </section>
 
-            <section data-state="clear_background">
-              <h2><code>clear_background</code></h2>
-              A <code>clear_background</code> is necessary if the background is an <code>&lt;iframe&gt;</code> that you want to interact with. Otherwise the overlays cover the background, even though they are invisible (opacity 0).
+            <section data-state="clear_background" data-markdown>
+              <textarea data-template>
+              ## `clear_background`
+              A `clear_background` is necessary if the background is an `&lt;iframe&gt;` that you want to interact with. Otherwise the overlays cover the background, even though they are invisible (opacity 0).
+              - Moves overlay element out of screen
+              - Combine with any `*_overlay` or style presets to trigger text- and link colors
+              </textarea>
             </section>
           </section> <!-- end of nested slides/column -->
 
